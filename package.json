@@ -1,0 +1,21 @@
+{
+  "name": "allex_leveldbtablelib",
+  "version": "1.0.0",
+  "description": "AllexJS lib for an extension to allex_leveldblib.DBArray",
+  "main": "index.js",
+  "scripts": {
+    "test": "allex-mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.hers.rs:allex_libs/leveldbtable.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "LevelDB",
+    "table",
+    "lib"
+  ],
+  "author": "HERS Belgrade",
+  "license": "ISC"
+}
