@@ -1,5 +1,13 @@
 loadMochaIntegration('allex_leveldblib');
 
+function dumpkvstorage () {
+  return qlib.promise2console(TheTable.kvstorage.dumpToConsole(), 'kvstorage');
+}
+
+function dumplog () {
+  return qlib.promise2console(TheTable.log.dumpToConsole(), 'log');
+}
+
 describe('Basic tests', function () {
   loadClientSide(['allex:leveldbtable:lib']);
   it ('create custom LevelDBTable class', function () {
@@ -23,12 +31,20 @@ describe('Basic tests', function () {
   it ('push a row', function () {
     return qlib.promise2console(TheTable.push(['andrija', 'petrovic', '1968', '178']), 'push');
   });
-  it ('read rows', function () {
-    qlib.promise2console(TheTable.kvstorage.dumpToConsole(), 'kvstorage');
-    qlib.promise2console(TheTable.log.dumpToConsole(), 'log');
+  it ('after push', function () {
+    return dumpkvstorage().then(dumplog);
   });
   it ('edit', function () {
-    return qlib.promise2console(TheTable.edit(0, 0, 'mica', 'editor'));
+    return qlib.promise2console(TheTable.edit(1, 0, 'mica', 'editor'));
+  });
+  it ('after edit', function () {
+    return dumpkvstorage().then(dumplog);
+  });
+  it ('undo', function () {
+    return qlib.promise2console(TheTable.undo());
+  });
+  it ('after undo', function () {
+    return dumpkvstorage().then(dumplog);
   });
 });
 
