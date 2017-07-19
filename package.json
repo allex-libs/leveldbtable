@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.hers.rs:allex_libs/leveldbtable.git"
+    "url": "git@github.com:allex-libs/leveldbtable.git"
   },
   "keywords": [
     "ecosystem:AllexJS",
