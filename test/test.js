@@ -9,7 +9,7 @@ function dumplog () {
 }
 
 describe('Basic tests', function () {
-  loadClientSide(['allex:leveldbtable:lib']);
+  loadClientSide(['allex_leveldbtablelib']);
   it ('create custom LevelDBTable class', function () {
     var LevelDBTable = leveldbtablelib.LevelDBTable;
     function MyTable (prophash) {
